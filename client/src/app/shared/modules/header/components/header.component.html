@@ -1,0 +1,14 @@
+<nav>
+  <div class="nav-wrapper container">
+    <a [routerLink]="[ '/blogs']" class="brand-logo">Blogs</a>
+    <ul id="nav-mobile" class="right">
+      <ng-template [ngIf]="!user">
+        <li><a href="/api/auth/google">Login With Google</a></li>
+      </ng-template>
+      <ng-template [ngIf]="user">
+        <li><a [routerLink]="['/new']">Create new</a></li>
+        <li><a href="/api/auth/logout">Logout</a></li>
+      </ng-template>
+    </ul>
+  </div>
+</nav>

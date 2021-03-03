@@ -1,0 +1,24 @@
+<form class="card" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="card-content">
+    <h5 class="center">Create new blog</h5>
+    <div class="input-field">
+      <input id="title" type="text" formControlName="title"
+        [ngClass]="{'invalid': form.get('title')?.invalid && form.get('title')?.touched}">
+      <label for="title">Title:</label>
+      <span class="helper-text red-text" *ngIf="form.get('title')?.invalid && form.get('title')?.touched">
+        Title can't be empty
+      </span>
+    </div>
+    <div class="input-field">
+      <input id="content" type="text" formControlName="content"
+        [ngClass]="{'invalid': form.get('content')?.invalid && form.get('content')?.touched}">
+      <label for="content">Content:</label>
+      <span class="helper-text red-text" *ngIf="form.get('content')?.invalid && form.get('content')?.touched">
+        Content can't be empty
+      </span>
+    </div>
+  </div>
+  <div class="card-action">
+    <button class="modal-action btn waves-effect" type="submit" [disabled]="form.invalid || form.disabled">Create</button>
+  </div>
+</form>

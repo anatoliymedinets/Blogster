@@ -1,0 +1,5 @@
+<h1>My Blogs</h1>
+<hr>
+<ul class="blog-list" *ngIf="blogs">
+ <li *ngFor="let blog of blogs">{{ blog |json}}</li> 
+</ul>
